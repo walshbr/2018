@@ -1,0 +1,349 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* BackGround */
+.bg {
+  background: #f2f2f2;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bg > label {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Wrapper */
+.w {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+/* Point of View (Perspective) */
+.pv {
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+/* Style may vary from the HTML - S */
+.nc:checked ~ .pv > .bg > label > .n li:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.nc:checked ~ .pv > .bg > label > .n li:nth-child(2) {
+  transition-delay: 0.4s;
+}
+
+.nc:checked ~ .pv > .bg > label > .n li:nth-child(3) {
+  transition-delay: 0.6s;
+}
+/* Style may vary from the HTML - E */
+
+/* Navigation Checkbox */
+.nc {
+  display: none;
+  visibility: hidden;
+}
+
+/* Layer */
+.l {
+  background: #fca2f2;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  box-shadow: 0px 0px 25px 5px #0a0a0a;
+  transition: transform 0.6s ease-out, left 0.6s ease-out;
+}
+
+.nc:checked ~ .pv > .l {
+  left: 15%;
+  transform: rotateY(-45deg);
+}
+
+/* Navigation Switch */
+.ns {
+  background: #0061e0;
+  width: 41px;
+  height: 100%;
+  float: left;
+}
+
+.ns > label {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.ns > label span {
+  background: white;
+  border-top: solid 1px #004eb5;
+  display: block;
+  position: absolute;
+  transform: rotate(0deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Switch: Plus sign */
+.ns > label span:first-child {
+  width: 21px;
+  height: 5px;
+  top: 18px;
+  left: 10px;
+}
+
+.ns > label span:nth-child(2) {
+  width: 5px;
+  height: 21px;
+  top: 10px;
+  left: 18px;
+}
+
+.nc:checked ~ .pv > .l > .tb > .ns > label span:first-child {
+  transform: rotate(360deg);
+}
+
+.nc:checked ~ .pv > .l > .tb > .ns > label span:nth-child(2) {
+  transform: rotate(450deg);
+}
+
+.cat {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  top: 120px;
+}
+
+.left-ear {
+  width: 0;
+  height: 0;
+  border-top: solid 100px #141414;
+  border-left: solid 80px transparent;
+  position: absolute;
+  top: 12px;
+  left: -24px;
+  transform: rotate(25deg);
+}
+
+.right-ear {
+  width: 0;
+  height: 0;
+  border-top: solid 100px #141414;
+  border-right: solid 80px transparent;
+  position: absolute;
+  top: 12px;
+  right: -24px;
+  transform: rotate(-25deg);
+}
+
+.head {
+  background: #141414;
+  width: 230px;
+  height: 200px;
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  border-radius: 100px 100px 180px 180px / 100px 100px 230px 230px;
+}
+
+.eye {
+  background: #ddff36;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 45px;
+  border-radius: 50px;
+}
+
+.eye > span {
+  background: black;
+  width: 20px;
+  height: 50px;
+  display: block;
+  position: absolute;
+  left: 15px;
+  border-radius: 10px / 25px;
+}
+
+.left-eye {
+  left: 35px;
+}
+
+.right-eye {
+  right: 35px;
+}
+
+.nose {
+  background: #070707;
+  width: 60px;
+  height: 30px;
+  position: absolute;
+  top: 105px;
+  left: 83px;
+  border-radius: 25px 25px 50px 50px / 25px 25px 42px 42px;
+}
+
+.nose > span {
+  background: black;
+  width: 10px;
+  height: 15px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+}
+
+.nose > span:nth-child(1) {
+  left: 14px;
+  border-radius: 6px 6px 0 1px / 6px 6px 0 8px;
+}
+
+.nose > span:nth-child(2) {
+  right: 14px;
+  border-radius: 6px 6px 1px 0 / 6px 6px 8px 0;
+}
+
+.mouth {
+  width: 100px;
+  height: 35px;
+  position: absolute;
+  top: 135px;
+  left: 63px;
+}
+
+.mouth > span {
+  position: absolute;
+}
+
+.mouth > span:nth-child(1) {
+  background: #df2424;
+  width: 34px;
+  height: 40px;
+  left: 31px;
+  top: 0px;
+  border: solid 3px black;
+  border-radius: 0 0 20px 20px / 0 0 40px 40px;
+}
+
+.mouth > span:nth-child(2), .mouth > span:nth-child(3) {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 25px solid white;
+  position: absolute;
+  top: 0;
+}
+
+.mouth > span:nth-child(2) {
+  left: 25px;
+}
+
+.mouth > span:nth-child(3) {
+  right: 25px;
+}
+
+.mouth > span:nth-child(4), .mouth > span:nth-child(5) {
+  background: #141414;
+  width: 44px;
+  height: 15px;
+  border: solid 3px black;
+  border-top: none;
+  position: absolute;
+  top: 0;
+}
+
+.mouth > span:nth-child(4) {
+  left: 0;
+  border-radius: 7px 0 30px 30px / 7px 0 20px 20px;
+}
+
+.mouth > span:nth-child(5) {
+  right: 0;
+  border-radius: 0 7px 30px 30px / 0 7px 20px 20px;
+}
+
+.whisker {
+  position: absolute;
+}
+
+.whisker > span {
+  width: 50px;
+  border-top: solid 3px black;
+  margin-top: 5px;
+  display: block;
+  position: absolute;
+}
+
+.whisker > span:nth-child(1) {
+  top: 110px;
+}
+
+.whisker > span:nth-child(2) {
+  top: 118px;
+}
+
+.whisker > span:nth-child(3) {
+  top: 126px;
+}
+
+.left-whisker {
+  left: 0px;
+}
+
+.right-whisker {
+  right: 50px;
+}
+
+.nc:checked ~ .pv > .bg > label > .n li {
+  left: 0;
+  opacity: 100;
+}
+
+/* Style may vary from the HTML - S */
+.nc:checked ~ .pv > .bg > label > .n li:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.nc:checked ~ .pv > .bg > label > .n li:nth-child(2) {
+  transition-delay: 0.4s;
+}
+
+.nc:checked ~ .pv > .bg > label > .n li:nth-child(3) {
+  transition-delay: 0.6s;
+}
+
+.heart {
+  color: #cf1a1a;
+  font-size: 32px;
+  text-align: center;
+}
+
+.heart > label {
+  font-size: 256px;
+  cursor: pointer;
+}
+
+#photo {
+  background-image: url("photo.jpg");
+  background-color: red;
+}
